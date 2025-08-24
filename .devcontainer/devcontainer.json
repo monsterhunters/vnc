@@ -1,0 +1,15 @@
+{
+  "name": "Ubuntu Desktop LXDE",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "runArgs": ["-p", "6901:6901"],
+  "postCreateCommand": "./post-create.sh",
+  "forwardPorts": [6901],
+  "portsAttributes": {
+    "6901": {
+      "label": "noVNC Desktop",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}
